@@ -105,9 +105,9 @@ if (!targetDir) {
   process.exit(1)
 }
 
-const newAppDir = path.resolve(process.cwd(), targetDir)
+const newAppDir = `'${path.resolve(process.cwd(), targetDir)}'`
 const appDirExists = fs.existsSync(newAppDir)
-const templateDir = path.resolve(__dirname, '../template')
+const templateDir = `'${path.resolve(__dirname, '../template')}'`
 
 const createProjectTasks = ({ newAppDir, overwrite }) => {
   return [
